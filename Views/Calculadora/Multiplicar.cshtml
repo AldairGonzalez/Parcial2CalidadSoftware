@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Calculadora";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Calculadora-PSP01", "Index", "Calculadora", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="card shadow mb-3">
+            <div class="card-header py-3">
+                <h1 class="m-0 font-weight-bolder text-white">
+                    <label>Calculadora</label>
+                </h1>
+            </div>
+            <hr />
+            <div>
+                <label class="alert-info">@ViewBag.Ms</label>
+            </div>
+            <hr />
+            <div class="card-body">
+                <div>
+                    <form action="../Calculadora/Index" id="form" method="post">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="form-row mb-3">
+                                    <div class="col-md-2 font-weight-bolder">
+                                        <label>Primer Número:</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="number" id="numero1Id" name="numero1" value="" class="form-control" />
+                                        <div>
+                                            <label class="alert-info">@ViewBag.numero1</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="form-row mb-3">
+                                    <div class="col-md-2 font-weight-bolder">
+                                        <label>Segundo Número:</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="number" id="numero2Id" name="numero2" value="" class="form-control" />
+                                        <div>
+                                            <label class="alert-info">@ViewBag.numero2</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="form-row mb-3">
+                                        <div class="col-md-1 font-weight-bolder">
+                                            <button id="Sumar" formaction="/Calculadora/Sumar" class="btn btn-success btn-icon-split">Sumar</button>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button id="Restar" formaction="/Calculadora/Restar" class="btn btn-success btn-icon-split">Restar</button>
+                                        </div>
+                                        <div class="col-md-1 font-weight-bolder">
+                                            <button id="Multiplicar" formaction="/Calculadora/Multiplicar" class="btn btn-success btn-icon-split">Multiplicar</button>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button id="Dividir" formaction="/Calculadora/Dividir" class="btn btn-success btn-icon-split">Dividir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="form-row mb-3">
+                                <div class="col-md-2 font-weight-bolder">
+                                    <label>Resultado:</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input id="respuesta" type="number" disabled value="@ViewData["respuesta"]" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
